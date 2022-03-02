@@ -1,0 +1,33 @@
+﻿@model TesteBenner.DAO.Entities.ControleEstacionamento
+
+@{
+    ViewData["Title"] = "Inserir saída";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Inserir Saída</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="InserirSaida">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PlacaVeiculo" class="control-label"></label>
+                <input asp-for="PlacaVeiculo" class="form-control" maxlength="8" required/>
+                <span asp-validation-for="PlacaVeiculo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Saida" class="control-label"></label>
+                <input asp-for="Saida" class="form-control" value="@DateTime.Now" required/>
+                <span asp-validation-for="Saida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Inserir Saida" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Home</a>
+</div>

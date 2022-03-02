@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TesteBenner.DAO.Entities.ControleEstacionamento>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Controle de Estacionamento</h1>
+
+<p class="text-right">
+    <a asp-action="InserirEntrada" class="btn btn-primary">Inserir Entrada</a>
+    <a asp-action="InserirSaida" class="btn btn-primary">Inserir Saída</a>
+</p>
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Saida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlacaVeiculo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Entrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlacaVeiculo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
